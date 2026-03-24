@@ -25,33 +25,45 @@
     >   
 </head>
 <main>  
+    
+    <img src="assets/marvel-logo.png" alt="Marvel Logo" width="400"/>
+    
     <section>
-        <img src="<?= $data["poster_url"];?> " width=" 300" alt="Poster de <?=$data["title"];?> "
-        style="border-radius: 20px; justify-content: centre" />
+        <img src="<?= $data["poster_url"];?> " width="300" alt="Poster de <?=$data["title"];?> "
+        style="border-radius: 20px;"/>
     </section>
     <hgroup>
-        <h3><?= $data["title"];?>Se estrena en <?= $data["days_until"];?> días.</h3>
+        <h3><?= $data["title"];?>, se estrena en <?= $data["days_until"];?> días.</h3>
         <p>Fecha de estreno: <?=$data["release_date"];?></p>
-        <p>Próxima entrega: <?=$data["following_production"]["title"];?></p>
-        <p></p>
+        <p><strong>Próxima entrega:</strong> <?=$data["following_production"]["title"];?></p>
+        <p>Fecha: <?=$data["following_production"]["release_date"];?></p>
     </hgroup>
 </main>
 
 <style>
+
 body{
     display: grid;
     place-content: center;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+img {
+  margin: 0;
+}
+
 section{
     display: flex;
     justify-content: center;
-    text-align: center;
 }
 
 hgroup{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     text-align: center;
 }
+</style>
